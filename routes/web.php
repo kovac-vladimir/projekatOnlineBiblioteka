@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PismoController;
 use App\Http\Controllers\PovezController;
 use App\Http\Controllers\FormatController;
+use App\Http\Controllers\IzdavacController;
 
 
 /*
@@ -16,7 +17,15 @@ use App\Http\Controllers\FormatController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route za dashboard
+Route::get("/",function(){
+    return view('dashboard.index');
+})->name('dashboard');
+//Route::get('/settings',[PismoController::class,'index')->name('settings');
+Route::get('/settings',function(){
+    return view('polisa.index');
+})->name('settings');
+// kraj route za dashboard
 Route::get('/pismo',[PismoController::class,'index'])->name('pismo.index');
 Route::get("/pismo/{id}",[PismoController::class,'show'])->name('pismo.edit');
 Route::post("/pismo-update",[PismoController::class,'update'])->name('pismo.update');
@@ -37,3 +46,16 @@ Route::post('/format-update',[FormatController::class,'update'])->name('format.u
 Route::get('/addFromat',[FormatController::class,'addFormat'])->name('format.create');
 Route::post('/addFormat',[FormatController::class,'saveFormat'])->name('format.save');
 Route::get("/format/delete/{id}",[FormatController::class,'destroy'])->name('format.delete');
+
+// route za izdavac
+/*
+Route::get('/izdavac',[IzdavacController::class,'index'])->name('izdavac.index');
+Route::get('/addIzdavac',[IzdavacController::class,'addIzdavac'])->name('izdavac.create');
+Route::post('/addIzdavac',[IzdavacController::class,'saveIzdavac'])->name('izdavac.save');
+Route::get('/izdavac/{id}',[IzdavacController::class,'show'])->name('izdavac.edit');
+Route::post('/izdavac-update',[IzdavacController::class,'update'])->name('izdavac.update');
+Route::get('/izdavac/delete/{id}',[IzdavacController::class,'delete'])->name('izdavac.delete');
+*/
+
+// route za Izdavac
+Route::resource('izdavac',IzdavacController::class);

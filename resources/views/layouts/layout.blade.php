@@ -29,9 +29,9 @@
     class="z-20 small:hidden  flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto bg-[#4558BE]">
     <!-- logo -->
     <div class="logo-font inline-flex bg-[#3F51B5] py-[18px] px-[30px]">
-        <a class="_o6689fn" href="#">
+        <a class="_o6689fn" href="{{route('dashboard')}}">
             <div class="block">
-                <a href="dashboard.php" class="text-[20px] font-medium">
+                <a href="{{route('dashboard')}}" class="text-[20px] font-medium">
                     <div class="flex">
                         <img src='/img/logo.svg' alt="" width="35px" height="35px">
                         <p class="text-[20px] mt-[5px]">&nbsp;&nbsp;Online Biblioteka</p>
@@ -193,7 +193,7 @@
                     <div class="ml-[25px]">
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
                             <div class="transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                <a href="dashboard.php" aria-label="Dashboard">
+                                <a href="{{ route('dashboard') }}" aria-label="Dashboard">
                                     <i
                                         class="text-white bg-[#3F51B5] px-[5px] pt-[4px] pb-[5px] fas fa-tachometer-alt text-[19px] rounded-[3px]"></i>
                                     <div class="hidden sidebar-item">
@@ -355,7 +355,7 @@
     </div>
     <div class="sidebar-nav py-[10px] border-t-[1px] border-[#e4dfdf] pt-[23px] pb-[29px]  group hover:bg-[#EFF3F6]">
         <!-- Settings Icon -->
-        <a href="settingsPolisa.php" aria-label="Settngs" class="ml-[30px]">
+        <a href="{{route('settings')}}" aria-label="Settngs" class="ml-[30px]">
             <span class="whitespace-nowrap">
                 <i
                     class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog"></i>
